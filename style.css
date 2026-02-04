@@ -48,12 +48,21 @@ body {
 }
 
 /* HERO */
+
 .hero {
   height: 90vh;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: 60px;
+  text-align: center;
+  background: linear-gradient(
+      rgba(0,0,0,0.6),
+      rgba(0,0,0,0.6)
+    ),
+    url("https://images.unsplash.com/photo-1520975916090-3105956dac38");
+  background-size: cover;
+  background-position: center;
+  animation: fadeIn 1.5s ease-in;
 }
 
 .hero h1 {
