@@ -1,0 +1,21 @@
+{
+  "name": "Relite Clothing",
+  "short_name": "Relite",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0b0b0b",
+  "theme_color": "#c9a24d",
+  "description": "Premium fashion & apparel brand",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/892/892458.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/892/892458.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
