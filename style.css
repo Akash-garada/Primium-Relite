@@ -1,1 +1,130 @@
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #111;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #111;
+  font-size: 14px;
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  width: fit-content;
+  padding: 12px 24px;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* PRODUCTS */
+.products {
+  padding: 60px;
+}
+
+.products h2 {
+  margin-bottom: 30px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.product-card img {
+  width: 100%;
+}
+
+.product-card h3 {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.product-card p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.product-card a {
+  font-size: 14px;
+  color: #111;
+  text-decoration: underline;
+}
+
+/* ABOUT & CONTACT */
+.about, .contact {
+  padding: 60px;
+}
+
+.insta {
+  display: block;
+  margin-top: 15px;
+  color: #111;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 12px;
+  border-top: 1px solid #eee;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero {
+    padding: 30px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .navbar {
+    padding: 20px;
+  }
+}
