@@ -2,52 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Product Details | Relite Clothing</title>
+  <title>Product | Relite Clothing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="logo">RELITE</div>
-    <nav>
-      <a href="index.html">Home</a>
-    </nav>
-  </header>
+<header class="navbar">
+  <div class="logo">RELITE</div>
+  <a href="index.html">Home</a>
+</header>
 
-  <section class="product-detail">
-    <div class="product-detail-grid">
+<section class="product-detail">
+  <img id="pImage">
+  <h1 id="pName"></h1>
+  <p id="pPrice"></p>
+  <p><strong>Color:</strong> <span id="pColor"></span></p>
 
-      <!-- IMAGE -->
-      <div>
-        <img id="productImage" src="" alt="Product Image">
-      </div>
+  <h3>Size Chart</h3>
+  <ul>
+    <li>S – 38</li>
+    <li>M – 40</li>
+    <li>L – 42</li>
+    <li>XL – 44</li>
+  </ul>
 
-      <!-- DETAILS -->
-      <div class="details">
-        <h1 id="productName"></h1>
-        <p class="price" id="productPrice"></p>
+  <p id="pDesc"></p>
 
-        <p><strong>Color:</strong> <span id="productColor"></span></p>
+  <button id="whatsappBtn">Order on WhatsApp</button>
+</section>
 
-        <h3>Size Chart</h3>
-        <ul>
-          <li>S – 38 inch</li>
-          <li>M – 40 inch</li>
-          <li>L – 42 inch</li>
-          <li>XL – 44 inch</li>
-        </ul>
-
-        <p id="productDesc"></p>
-
-        <button id="orderBtn">Order on WhatsApp</button>
-      </div>
-
-    </div>
-  </section>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
