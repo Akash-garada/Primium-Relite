@@ -1,43 +1,54 @@
 
-function orderNow(productName, price) {
-  const phoneNumber = "917008815216"; // 
-  const message = `Hi Relite Clothing, I want to order ${productName} priced at ${price}`;
-  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank");
-}
-// ===============================
-// UNIVERSAL PRODUCT SYSTEM
-// ===============================
+document.addEventListener("DOMContentLoaded", () => {
 
-// PRODUCT CLICK → SAVE DATA
-document.querySelectorAll(".product-card").forEach(card => {
-  card.addEventListener("click", () => {
+  const products = [
+    {
+      id: 1,
+      name: "Relite Raw Hoodie",
+      price: "₹1,999",
+      images: [
+        "images/hoodie1.jpg",
+        "images/hoodie2.jpg"
+      ],
+      details: "Premium oversized hoodie with luxury feel.",
+      colors: ["Black", "Grey"]
+    }
+  ];
 
-    const product = {
-      name: card.dataset.name,
-      price: card.dataset.price,
-      color: card.dataset.color,
-      image: card.dataset.image,
-      desc: card.dataset.desc
-    };
+  const params = new URLSearchParams(window.location.search);
+  const productId = Number(params.get("id"));
 
-    localStorage.setItem("selectedProduct", JSON.stringify(product));
-    window.location.href = "product.html";
-  });
-});
+  const product = products.find(p => p.id === productId);
 
-// LOAD PRODUCT ON PRODUCT PAGE
-const product = JSON.parse(localStorage.getItem("selectedProduct"));
+  if (!product) {
+    console.log("Product not found");
+    return;
+  }
 
-if (product) {
   document.getElementById("pName").innerText = product.name;
   document.getElementById("pPrice").innerText = product.price;
-  document.getElementById("pColor").innerText = product.color;
-  document.getElementById("pImage").src = product.image;
-  document.getElementById("pDesc").innerText = product.desc;
+  document.getElementById("pDetails").innerText = product.details;
 
-  document.getElementById("whatsappBtn").onclick = () => {
-    const msg = `Hi Relite Clothing, I want to order ${product.name} (${product.price})`;
-    window.open(`https://wa.me/917008815216?text=${encodeURIComponent(msg)}`);
-  };
-}
+  const mainImage = document.getElementById("mainImage");
+  mainImage.src = product.images[0];
+
+  const thumbs = document.getElementById("thumbs");
+  thumbs.innerHTML = "";
+
+  product.images.forEach(img => {
+    const t = document.createElement("img");
+    t.src = img;
+    t.onclick = () => mainImage.src = img;
+    thumbs.appendChild(t);
+  });
+
+  const colorBox = document.getElementById("colorBox");
+  colorBox.innerHTML = "";
+
+  product.colors.forEach(color => {
+    const c = document.createElement("button");
+    c.innerText = color;
+    colorBox.appendChild(c);
+  });
+
+});
